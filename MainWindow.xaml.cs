@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juego_POO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,10 @@ namespace clases
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            Card c = new Card("♣", "2");
-            
-            txtBox.Text = c.ShowIn();
+
+            Dealer a = new Dealer();
+            var lista = a.Deck;
+            MessageBox.Show(lista[24].Suit);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace clases
         string symbol;
         int score;
         string color;
-        
+
         public Card(string suit, string symbol)
         {
             this.suit = suit;
@@ -54,6 +54,18 @@ namespace clases
         {
             get { return symbol; }
             set { symbol = value; }
+        }
+
+        public int Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
+
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
         }
 
         public string ShowIn()

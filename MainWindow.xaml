@@ -9,7 +9,7 @@
     <Grid>
 
         <Button Name="btnCreate" Content="Create" HorizontalAlignment="Center" Margin="0,328,0,0" VerticalAlignment="Top" Click="btnCreate_Click"/>
-        <TextBox Name="txtBox" HorizontalAlignment="Center" Height="203" Margin="0,92,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <TextBlock Name="txtResults" HorizontalAlignment="Left" Height="194" Margin="163,102,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="433"/>
 
 
     </Grid>

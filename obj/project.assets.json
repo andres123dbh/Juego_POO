@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\clases\\Juego_POO.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\Juego_POO\\Juego_POO.csproj",
       "projectName": "Juego_POO",
-      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\clases\\Juego_POO.csproj",
+      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\Juego_POO\\Juego_POO.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USUARIO\\source\\repos\\clases\\obj\\",
+      "outputPath": "C:\\Users\\USUARIO\\source\\repos\\Juego_POO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
