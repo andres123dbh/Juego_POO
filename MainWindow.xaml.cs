@@ -31,7 +31,9 @@ namespace clases
 
             Dealer a = new Dealer();
             var lista = a.Deck;
-            MessageBox.Show(lista[50].Suit);
+            MessageBox.Show(lista[0].Suit + lista[0].Symbol + lista[0].Score);
+
+
         }
     }
 }

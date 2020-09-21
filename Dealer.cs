@@ -1,14 +1,16 @@
 ﻿using clases;
 using System;
 using System.Collections.Generic;
+using System.Resources;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Juego_POO
 {
     class Dealer
     {
+        List<Card> hand = new List<Card>();
         List<Card> deck = new List<Card>();
-
         List<string> listSuit = new List<string>()
         {
             "♥","♦","♣","♠"
@@ -20,12 +22,19 @@ namespace Juego_POO
 
         public Dealer(){
             Generate();
+            Randomize();
         }
 
         public List<Card> Deck
         {
             get { return deck; }
             set { deck = value; }
+        }
+
+        public List<Card> Hand
+        {
+            get { return hand; }
+            set { hand = value; }
         }
 
         public List<string> ListSuit
@@ -54,7 +63,31 @@ namespace Juego_POO
 
         }
 
-        
+        public void Randomize()
+        {
+            
+
+            var numberRandom = new Random();
+            List<int> number = new List<int>();
+            for (int i = 0; i < 52; i++)
+            {
+                number.Add(i);
+
+            }
+            for (int i = 51; i > -1; i--)
+            {
+                var j = numberRandom.Next(0, i);
+                deck[i].Symbol = deck[number[j]].Symbol;
+                deck[i].Score = deck[number[j]].Score;
+                deck[i].Suit = deck[number[j]].Suit;
+                deck[i].Color = deck[number[j]].Color;
+                number.RemoveAt(j);
+
+            }
+
+
+        }
+
 
     }
 }
