@@ -67,23 +67,17 @@ namespace Juego_POO
         {
             
 
-            var numberRandom = new Random();
-            List<int> number = new List<int>();
+            
+            List<Card> position = new List<Card>();
+            Random numberRandom = new Random();
             for (int i = 0; i < 52; i++)
             {
-                number.Add(i);
-
+                var j = numberRandom.Next(0, deck.Count - 1);
+                position.Add(deck[j]);
+                deck.RemoveAt(j);
             }
-            for (int i = 51; i > -1; i--)
-            {
-                var j = numberRandom.Next(0, i);
-                deck[i].Symbol = deck[number[j]].Symbol;
-                deck[i].Score = deck[number[j]].Score;
-                deck[i].Suit = deck[number[j]].Suit;
-                deck[i].Color = deck[number[j]].Color;
-                number.RemoveAt(j);
 
-            }
+            deck = position;
 
 
         }

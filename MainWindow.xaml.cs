@@ -24,27 +24,45 @@ namespace clases
     public partial class MainWindow : Window
     {
         Dealer a;
+        Player gamePlayer;
         public MainWindow()
         {
             InitializeComponent();
             a = new Dealer();
+            gamePlayer = new Player();
 
 
         }
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            
-            var lista = a.Hand;
-            a.Init();
-            string showCards;
-            showCards = "";
-            for(int i = 0 ; i < lista.Count; i++)
+            string ene;
+            ene = "";
+            for (int i = 0; i < a.Deck.Count; i++)
             {
-                showCards = showCards + "\n" + lista[i].Suit + lista[i].Symbol;
+                ene = ene + "\n" + a.Deck[i].Suit + a.Deck[i].Symbol;
             }
-            MessageBox.Show(showCards);
+            MessageBox.Show(ene);
+            var handDealer = a.Hand;
+            a.Init();
+            string showCardsDealer;
+            showCardsDealer = "";
+            for (int i = 0; i < handDealer.Count; i++)
+            {
+                showCardsDealer = showCardsDealer + "\n" + handDealer[i].Suit + handDealer[i].Symbol;
+            }
+            MessageBox.Show(showCardsDealer);
 
+            var handPlayer = gamePlayer.Hand;
+            gamePlayer.Init(a.Deck);
+            string showCardsPlayer;
+            showCardsPlayer = "";
+            for (int i = 0; i < handPlayer.Count; i++)
+            {
+                showCardsPlayer = showCardsPlayer + "\n" + handPlayer[i].Suit + handPlayer[i].Symbol;
+            }
+            MessageBox.Show(showCardsPlayer);
+         
         }
     }
 }
