@@ -88,6 +88,26 @@ namespace Juego_POO
 
         }
 
+        public List<Card> Deal()
+        {
+            int b = deck.Count;
+            List<Card> lastCard = new List<Card>();
+            lastCard.Add(deck[b - 1]);
+            deck.RemoveAt(b - 1);
+            return lastCard;
+        }
+        public void AddCard(List<Card> card)
+        {
+            hand.Add(card[0]);
+        }
+        public void Init()
+        {
+            var lastcard = Deal();
+            AddCard(lastcard);
+            var lastcard2 = Deal();
+            AddCard(lastcard2);
+        }
+
 
     }
 }
