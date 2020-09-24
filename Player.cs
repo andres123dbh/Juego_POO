@@ -16,7 +16,6 @@ namespace Juego_POO
             get { return hand; }
             set { hand = value; }
         }
-
         public List<Card> Deal(List<Card>  deck)
         {
             a = new Dealer();
