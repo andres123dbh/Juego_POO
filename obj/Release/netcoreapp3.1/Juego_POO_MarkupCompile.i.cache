@@ -1,18 +1,18 @@
 ﻿Juego_POO
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\
+C:\Users\USUARIO\source\repos\Juego_POO\obj\Release\netcoreapp3.1\
 Juego_POO
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
 C:\Users\USUARIO\source\repos\Juego_POO\App.xaml
 2-487028597
 
-7-849407629
+9168249284
 1921654412462
 Game.xaml;MainWindow.xaml;
 

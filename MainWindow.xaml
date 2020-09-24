@@ -10,6 +10,6 @@
         <Label Content="Blackjack" HorizontalAlignment="Center" Margin="0,-13,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48" Background="{x:Null}" FontStyle="Normal" FontFamily="Harlow Solid Italic" Foreground="White"/>
         <Frame Name="frameMain" Content="" HorizontalAlignment="Left" Height="380" Margin="0,58,0,0" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden"/>
         <Button Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="50" Foreground="Black" Background="White" FontFamily="Cooper Black" Height="22" Click="btnExit_Click"/>
-        <Image Source="C:\Users\USUARIO\source\repos\Juego_POO\Resources\Casino-Alto-Icon.png" HorizontalAlignment="Left" Height="50" Margin="505,1,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.506,0.55"/>
+        <Image Name="imgGame" Source="C:\Users\USUARIO\source\repos\Juego_POO\Resources\Casino-Alto-Icon.png" HorizontalAlignment="Left" Height="48" Margin="505,2,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.506,0.55"/>
     </Grid>
 </Window>

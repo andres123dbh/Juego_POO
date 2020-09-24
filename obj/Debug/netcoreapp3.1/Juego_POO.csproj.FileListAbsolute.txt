@@ -38,5 +38,3 @@ C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\Juego_POO.pdb
 C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\Juego_POO.genruntimeconfig.cache
 C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\Game.g.cs
 C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\Game.baml
-C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\Juego_POO.Properties.Resources.resources
-C:\Users\USUARIO\source\repos\Juego_POO\obj\Debug\netcoreapp3.1\Juego_POO.csproj.GenerateResource.cache
