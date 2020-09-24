@@ -63,5 +63,10 @@ namespace clases
         {
             frameMain.NavigationService.Navigate(new Game());
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

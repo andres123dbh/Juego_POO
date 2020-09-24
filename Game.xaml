@@ -9,20 +9,27 @@
       Title="Game" Background="#FF00A007">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="29*"/>
+        </Grid.ColumnDefinitions>
         <Button Name="btnHit" Content="Hit" HorizontalAlignment="Left" Margin="327,298,0,0" VerticalAlignment="Top" Width="50" Background="Black" Foreground="White" FontFamily="Cooper Black" FontWeight="Normal" Height="22" Click="btnHit_Click" Visibility="Hidden"/>
         <Button Name="btnStant" Content="Stant" HorizontalAlignment="Left" Margin="419,298,0,0" VerticalAlignment="Top" Width="50" Foreground="White" Background="Black" FontFamily="Cooper Black" Height="22" Click="btnStant_Click" Visibility="Hidden"/>
-        <Button Name="btnStart" Content="Start" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="50" Foreground="White" Background="Black" FontFamily="Cooper Black" Height="22" Click="btnStart_Click"/>
-        <TextBlock Name="txtHandPlayer" HorizontalAlignment="Left" Height="114" Margin="298,140,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Visibility="Hidden"/>
-        <TextBlock Name="txtHandDealer" HorizontalAlignment="Left" Height="114" Margin="444,140,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Visibility="Hidden"/>
-        <Label Name="lblHandPlayer" Content="Hand Player:" HorizontalAlignment="Left" Margin="293,120,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <Label Name="lblHandDealer" Content="Hand Dealer:" HorizontalAlignment="Left" Margin="439,120,0,0" VerticalAlignment="Top" Foreground="Black" Visibility="Hidden"/>
-        <Label Name="lblHandPlayerValue" Content="Hand Value:" HorizontalAlignment="Left" Margin="292,257,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBlock Name="txtHandPlayerValue" HorizontalAlignment="Left" Height="18" Margin="361,263,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Visibility="Hidden"/>
-        <Button Name="btnPlayAgain" Content="Play Again" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="79" Foreground="White" Background="Black" FontFamily="Cooper Black" Height="22" Click="btnPlayAgain_Click" Visibility="Hidden"/>
-        <Label Name="lblGamesWin" Content="Games Win:" HorizontalAlignment="Left" Margin="36,164,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <Label Name="lblGamesLose" Content="Games Lose:" HorizontalAlignment="Left" Margin="36,190,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBlock Name="txtGamesWin" HorizontalAlignment="Left" Height="20" Margin="106,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
-        <TextBlock Name="txtGamesLose" HorizontalAlignment="Left" Height="20" Margin="108,196,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
+        <Button Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="375,298,0,0" VerticalAlignment="Top" Width="50" Foreground="White" Background="Black" FontFamily="Cooper Black" Height="22" Click="btnStart_Click"/>
+        <TextBlock Name="txtHandPlayer" HorizontalAlignment="Left" Height="156" Margin="298,121,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"  FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <TextBlock Name="txtHandDealer" HorizontalAlignment="Left" Height="156" Margin="444,121,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"  FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <Label Name="lblHandPlayer" Content="Hand Player :" HorizontalAlignment="Left" Margin="293,102,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <Label Name="lblHandDealer" Content="Hand Dealer :" HorizontalAlignment="Left" Margin="439,102,0,0" VerticalAlignment="Top" Foreground="Black"  FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <Label Name="lblHandPlayerValue" Content="Hand Value :" HorizontalAlignment="Left" Margin="292,257,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <TextBlock Name="txtHandPlayerValue" HorizontalAlignment="Left" Height="13" Margin="366,263,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="22"  FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <Button Name="btnPlayAgain" Content="Play Again" HorizontalAlignment="Left" Margin="360,298,0,0" VerticalAlignment="Top" Width="80" Foreground="White" Background="Black" FontFamily="Cooper Black" Height="22" Click="btnPlayAgain_Click" Visibility="Hidden"/>
+        <Label Name="lblGamesWin" Content="Games Win :" HorizontalAlignment="Left" Margin="36,164,0,0" VerticalAlignment="Top"  FontFamily=" Bahnschrift" Visibility="Hidden"/>
+        <Label Name="lblGamesLose" Content="Games Lose :" HorizontalAlignment="Left" Margin="36,190,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <TextBlock Name="txtGamesWin" HorizontalAlignment="Left" Height="13" Margin="108,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <TextBlock Name="txtGamesLose" HorizontalAlignment="Left" Height="12" Margin="115,196,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" FontFamily="Bahnschrift" Visibility="Hidden"/>
+        <Image Name="imgGame" Source="C:\Users\USUARIO\source\repos\Juego_POO\Resources\Chapter7_Image2.png" HorizontalAlignment="Left" Height="184" Margin="205,0,0,0" VerticalAlignment="Center" Width="390" RenderTransformOrigin="0.506,0.55"/>
+
+
 
     </Grid>
 </Page>

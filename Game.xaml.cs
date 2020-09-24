@@ -47,6 +47,7 @@ namespace Juego_POO
             txtGamesWin.Visibility = Visibility.Visible;
             lblGamesLose.Visibility = Visibility.Visible;
             lblGamesWin.Visibility = Visibility.Visible;
+            imgGame.Visibility = Visibility.Hidden;
 
             StartGame();
 
@@ -110,9 +111,7 @@ namespace Juego_POO
                     if (score == 21)
                     {
                         MessageBox.Show("You Win");
-                        btnHit.Visibility = Visibility.Hidden;
-                        btnStant.Visibility = Visibility.Hidden;
-                        btnPlayAgain.Visibility = Visibility.Visible;
+                        PlayAgain();
                         Gamesgame.gamesWin = Gamesgame.gamesWin + 1;
 
                     }
@@ -120,9 +119,7 @@ namespace Juego_POO
                 if (score > 21)
                 {
                     MessageBox.Show("You Lose");
-                    btnHit.Visibility = Visibility.Hidden;
-                    btnStant.Visibility = Visibility.Hidden;
-                    btnPlayAgain.Visibility = Visibility.Visible;
+                    PlayAgain();
                     Gamesgame.gamesLose = Gamesgame.gamesLose + 1;
                 }
             }
@@ -273,9 +270,7 @@ namespace Juego_POO
             txtHandDealer.Inlines.Add(new Run(showCardsDealer));
 
             Check(scorePlayer, turn, scoreDealer);
-            btnHit.Visibility = Visibility.Hidden;
-            btnStant.Visibility = Visibility.Hidden;
-            btnPlayAgain.Visibility = Visibility.Visible;
+            PlayAgain();
         }
 
         private void btnPlayAgain_Click(object sender, RoutedEventArgs e)
@@ -284,6 +279,13 @@ namespace Juego_POO
             btnStant.Visibility = Visibility.Visible;
             btnPlayAgain.Visibility = Visibility.Hidden;
             ResetGame();
+        }
+
+        public void PlayAgain()
+        {
+            btnHit.Visibility = Visibility.Hidden;
+            btnStant.Visibility = Visibility.Hidden;
+            btnPlayAgain.Visibility = Visibility.Visible;
         }
 
         public static class Gamesgame
