@@ -36,13 +36,7 @@ namespace clases
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            string ene;
-            ene = "";
-            for (int i = 0; i < a.Deck.Count; i++)
-            {
-                ene = ene + "\n" + a.Deck[i].Suit + a.Deck[i].Symbol;
-            }
-            MessageBox.Show(ene);
+            
             var handDealer = a.Hand;
             a.Init();
             string showCardsDealer;
@@ -63,6 +57,11 @@ namespace clases
             }
             MessageBox.Show(showCardsPlayer);
          
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            frameMain.NavigationService.Navigate(new Game());
         }
     }
 }

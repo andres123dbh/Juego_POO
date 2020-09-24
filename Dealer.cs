@@ -65,14 +65,12 @@ namespace Juego_POO
 
         public void Randomize()
         {
-            
 
-            
             List<Card> position = new List<Card>();
             Random numberRandom = new Random();
             for (int i = 0; i < 52; i++)
             {
-                var j = numberRandom.Next(0, deck.Count - 1);
+                var j = numberRandom.Next(0, deck.Count);
                 position.Add(deck[j]);
                 deck.RemoveAt(j);
             }

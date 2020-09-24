@@ -6,11 +6,8 @@
         xmlns:local="clr-namespace:clases"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Center" Margin="0,328,0,0" VerticalAlignment="Top" Click="btnCreate_Click"/>
-        <TextBlock Name="txtResults" HorizontalAlignment="Left" Height="194" Margin="163,102,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="433"/>
-
-
+    <Grid Background="Black" Loaded="Grid_Loaded">
+        <Label Content="Blackjack" HorizontalAlignment="Center" Margin="0,-13,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48" Background="{x:Null}" FontStyle="Normal" FontFamily="Harlow Solid Italic" Foreground="White"/>
+        <Frame Name="frameMain" Content="" HorizontalAlignment="Left" Height="380" Margin="0,58,0,0" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
