@@ -15,10 +15,14 @@
         <TextBlock Name="txtHandPlayer" HorizontalAlignment="Left" Height="114" Margin="298,140,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Visibility="Hidden"/>
         <TextBlock Name="txtHandDealer" HorizontalAlignment="Left" Height="114" Margin="444,140,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Visibility="Hidden"/>
         <Label Name="lblHandPlayer" Content="Hand Player:" HorizontalAlignment="Left" Margin="293,120,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <Label Name="lblHandDealer" Content="Hand Dealer" HorizontalAlignment="Left" Margin="439,120,0,0" VerticalAlignment="Top" Foreground="Black" Visibility="Hidden"/>
+        <Label Name="lblHandDealer" Content="Hand Dealer:" HorizontalAlignment="Left" Margin="439,120,0,0" VerticalAlignment="Top" Foreground="Black" Visibility="Hidden"/>
         <Label Name="lblHandPlayerValue" Content="Hand Value:" HorizontalAlignment="Left" Margin="292,257,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <TextBlock Name="txtHandPlayerValue" HorizontalAlignment="Left" Height="18" Margin="361,263,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Visibility="Hidden"/>
         <Button Name="btnPlayAgain" Content="Play Again" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="79" Foreground="White" Background="Black" FontFamily="Cooper Black" Height="22" Click="btnPlayAgain_Click" Visibility="Hidden"/>
+        <Label Name="lblGamesWin" Content="Games Win:" HorizontalAlignment="Left" Margin="36,164,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label Name="lblGamesLose" Content="Games Lose:" HorizontalAlignment="Left" Margin="36,190,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBlock Name="txtGamesWin" HorizontalAlignment="Left" Height="20" Margin="106,170,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
+        <TextBlock Name="txtGamesLose" HorizontalAlignment="Left" Height="20" Margin="108,196,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
 
     </Grid>
 </Page>

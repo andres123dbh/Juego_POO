@@ -26,13 +26,14 @@ namespace Juego_POO
             InitializeComponent();
             gameDealer = new Dealer();
             gamePlayer = new Player();
-            
+            Gamesgame.gamesWin = 0;
+            Gamesgame.gamesLose = 0;
 
-            
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
+
             btnStart.Visibility = Visibility.Hidden;
             btnHit.Visibility = Visibility.Visible;
             btnStant.Visibility = Visibility.Visible;
@@ -42,9 +43,13 @@ namespace Juego_POO
             lblHandPlayer.Visibility = Visibility.Visible;
             txtHandPlayerValue.Visibility = Visibility.Visible;
             lblHandPlayerValue.Visibility = Visibility.Visible;
+            txtGamesLose.Visibility = Visibility.Visible;
+            txtGamesWin.Visibility = Visibility.Visible;
+            lblGamesLose.Visibility = Visibility.Visible;
+            lblGamesWin.Visibility = Visibility.Visible;
 
             StartGame();
-          
+
         }
 
         private void btnHit_Click(object sender, RoutedEventArgs e)
@@ -90,12 +95,12 @@ namespace Juego_POO
                 }
             }
 
-            Check(score,turn,scoreDealer,0,0);
-            
+            Check(score, turn, scoreDealer);
+
 
         }
 
-        public int Check(int score , string turn , int scoreDealer , int gamesWin , int gameLose)
+        public void Check(int score, string turn, int scoreDealer)
         {
             if (turn == "Player")
             {
@@ -108,8 +113,7 @@ namespace Juego_POO
                         btnHit.Visibility = Visibility.Hidden;
                         btnStant.Visibility = Visibility.Hidden;
                         btnPlayAgain.Visibility = Visibility.Visible;
-                        gamesWin = gamesWin + 1;
-                        return gamesWin;
+                        Gamesgame.gamesWin = Gamesgame.gamesWin + 1;
 
                     }
                 }
@@ -119,19 +123,17 @@ namespace Juego_POO
                     btnHit.Visibility = Visibility.Hidden;
                     btnStant.Visibility = Visibility.Hidden;
                     btnPlayAgain.Visibility = Visibility.Visible;
-                    gameLose = gameLose + 1;
-                    return gameLose;
+                    Gamesgame.gamesLose = Gamesgame.gamesLose + 1;
                 }
             }
             else
             {
                 if (turn == "Dealer")
                 {
-                    if (scoreDealer > 21)
+                    if (scoreDealer > 21 || scoreDealer == score)
                     {
                         MessageBox.Show("You Win");
-                        gamesWin = gamesWin + 1;
-                        return gamesWin;
+                        Gamesgame.gamesWin = Gamesgame.gamesWin + 1;
 
                     }
                     else
@@ -139,13 +141,11 @@ namespace Juego_POO
                         if (scoreDealer > score)
                         {
                             MessageBox.Show("You Lose");
-                            gameLose = gameLose + 1;
-                            return gameLose;
+                            Gamesgame.gamesLose = Gamesgame.gamesLose + 1;
                         }
                     }
                 }
             }
-            return 1;
         }
 
         public void ResetGame()
@@ -155,6 +155,8 @@ namespace Juego_POO
             txtHandPlayerValue.Text = string.Empty;
             txtHandPlayer.Text = string.Empty;
             txtHandDealer.Text = string.Empty;
+            txtGamesWin.Text = string.Empty;
+            txtGamesLose.Text = string.Empty;
             StartGame();
         }
 
@@ -166,7 +168,7 @@ namespace Juego_POO
             string turn = "Player";
 
             var handPlayer = gamePlayer.Hand;
-            string showCardsPlayer  = "";
+            string showCardsPlayer = "";
             for (int i = 0; i < handPlayer.Count; i++)
             {
                 showCardsPlayer = showCardsPlayer + "\n" + handPlayer[i].Symbol + handPlayer[i].Suit;
@@ -190,7 +192,7 @@ namespace Juego_POO
                 }
             }
             txtHandPlayerValue.Inlines.Add(new Run(score.ToString()));
-            
+
             var handDealer = gameDealer.Hand;
             int scoreDealer = 0;
             for (int i = 0; i < handDealer.Count; i++)
@@ -205,7 +207,9 @@ namespace Juego_POO
                 }
             }
 
-            Check(score, turn, scoreDealer,0,0);
+            txtGamesWin.Inlines.Add(new Run(Gamesgame.gamesWin.ToString()));
+            txtGamesLose.Inlines.Add(new Run(Gamesgame.gamesLose.ToString()));
+            Check(score, turn, scoreDealer);
         }
 
 
@@ -268,7 +272,7 @@ namespace Juego_POO
             }
             txtHandDealer.Inlines.Add(new Run(showCardsDealer));
 
-            Check(scorePlayer, turn, scoreDealer,0,0);
+            Check(scorePlayer, turn, scoreDealer);
             btnHit.Visibility = Visibility.Hidden;
             btnStant.Visibility = Visibility.Hidden;
             btnPlayAgain.Visibility = Visibility.Visible;
@@ -280,6 +284,12 @@ namespace Juego_POO
             btnStant.Visibility = Visibility.Visible;
             btnPlayAgain.Visibility = Visibility.Hidden;
             ResetGame();
+        }
+
+        public static class Gamesgame
+        {
+            public static int gamesWin { get; set; }
+            public static int gamesLose { get; set; }
         }
     }
 }
