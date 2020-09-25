@@ -6,4 +6,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Casino-Alto-Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Casino-Alto-Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

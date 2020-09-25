@@ -68,20 +68,66 @@ namespace Juego_POO
             }
             txtHandPlayer.Inlines.Add(new Run(showCardsPlayer));
 
-            int score = 0;
-            for (int i = 0; i < handPlayer.Count; i++)
-            {
-                score = score + handPlayer[i].Score;
-            }
-            for (int i = 0; i < handPlayer.Count; i++)
-            {
-                if (handPlayer[i].Symbol == "A" && score <= 11)
-                {
-                    score = score + 10;
-                }
-            }
+            int score = CheckValuePlayerr();
             txtHandPlayerValue.Inlines.Add(new Run(score.ToString()));
 
+            int scoreDealer = CheckValueDealer();
+
+            Check(score, turn, scoreDealer);
+
+
+        }
+
+        private void btnStant_Click(object sender, RoutedEventArgs e)
+        {
+            string turn = "Dealer";
+            txtHandDealer.Text = string.Empty;
+
+            int scorePlayer = CheckValuePlayerr();
+
+            var handDealer = gameDealer.Hand;
+            int scoreDealer = CheckValueDealer();
+
+            while (scoreDealer < scorePlayer)
+            {
+                var cardDealer = gameDealer.Deal();
+                gameDealer.AddCard(cardDealer);
+                scoreDealer = 0;
+                for (int i = 0; i < handDealer.Count; i++)
+                {
+                    scoreDealer = scoreDealer + handDealer[i].Score;
+                }
+                for (int i = 0; i < handDealer.Count; i++)
+                {
+                    if (handDealer[i].Symbol == "A" && scoreDealer <= 11)
+                    {
+                        scoreDealer = scoreDealer + 10;
+                    }
+                }
+
+            }
+
+            string showCardsDealer = "";
+            for (int i = 0; i < handDealer.Count; i++)
+            {
+                showCardsDealer = showCardsDealer + "\n" + handDealer[i].Symbol + handDealer[i].Suit;
+            }
+            txtHandDealer.Inlines.Add(new Run(showCardsDealer));
+
+            Check(scorePlayer, turn, scoreDealer);
+            PlayAgain();
+        }
+
+        private void btnPlayAgain_Click(object sender, RoutedEventArgs e)
+        {
+            btnHit.Visibility = Visibility.Visible;
+            btnStant.Visibility = Visibility.Visible;
+            btnPlayAgain.Visibility = Visibility.Hidden;
+            ResetGame();
+        }
+
+        public int CheckValueDealer()
+        {
             var handDealer = gameDealer.Hand;
             int scoreDealer = 0;
             for (int i = 0; i < handDealer.Count; i++)
@@ -95,10 +141,25 @@ namespace Juego_POO
                     scoreDealer = scoreDealer + 10;
                 }
             }
+            return scoreDealer;
+        }
 
-            Check(score, turn, scoreDealer);
-
-
+        public int CheckValuePlayerr()
+        {
+            var handPlayer = gamePlayer.Hand;
+            int score = 0;
+            for (int i = 0; i < handPlayer.Count; i++)
+            {
+                score = score + handPlayer[i].Score;
+            }
+            for (int i = 0; i < handPlayer.Count; i++)
+            {
+                if (handPlayer[i].Symbol == "A" && score <= 11)
+                {
+                    score = score + 10;
+                }
+            }
+            return score;
         }
 
         public void Check(int score, string turn, int scoreDealer)
@@ -176,109 +237,14 @@ namespace Juego_POO
             txtHandDealer.Inlines.Add(new Run(showCardDealer));
             showCardDealer = "";
 
-            int score = 0;
-            for (int i = 0; i < handPlayer.Count; i++)
-            {
-                score = score + handPlayer[i].Score;
-            }
-            for (int i = 0; i < handPlayer.Count; i++)
-            {
-                if (handPlayer[i].Symbol == "A" && score <= 11)
-                {
-                    score = score + 10;
-                }
-            }
+            int score = CheckValuePlayerr();
             txtHandPlayerValue.Inlines.Add(new Run(score.ToString()));
 
-            var handDealer = gameDealer.Hand;
-            int scoreDealer = 0;
-            for (int i = 0; i < handDealer.Count; i++)
-            {
-                scoreDealer = scoreDealer + handDealer[i].Score;
-            }
-            for (int i = 0; i < handDealer.Count; i++)
-            {
-                if (handDealer[i].Symbol == "A" && scoreDealer <= 11)
-                {
-                    scoreDealer = scoreDealer + 10;
-                }
-            }
+            int scoreDealer = CheckValueDealer();
 
             txtGamesWin.Inlines.Add(new Run(Gamesgame.gamesWin.ToString()));
             txtGamesLose.Inlines.Add(new Run(Gamesgame.gamesLose.ToString()));
             Check(score, turn, scoreDealer);
-        }
-
-
-        private void btnStant_Click(object sender, RoutedEventArgs e)
-        {
-            string turn = "Dealer";
-            txtHandDealer.Text = string.Empty;
-
-            var handPlayer = gamePlayer.Hand;
-            int scorePlayer = 0;
-            for (int i = 0; i < handPlayer.Count; i++)
-            {
-                scorePlayer = scorePlayer + handPlayer[i].Score;
-            }
-            for (int i = 0; i < handPlayer.Count; i++)
-            {
-                if (handPlayer[i].Symbol == "A" && scorePlayer <= 11)
-                {
-                    scorePlayer = scorePlayer + 10;
-                }
-            }
-
-            var handDealer = gameDealer.Hand;
-            int scoreDealer = 0;
-            for (int i = 0; i < handDealer.Count; i++)
-            {
-                scoreDealer = scoreDealer + handDealer[i].Score;
-            }
-            for (int i = 0; i < handDealer.Count; i++)
-            {
-                if (handDealer[i].Symbol == "A" && scoreDealer <= 11)
-                {
-                    scoreDealer = scoreDealer + 10;
-                }
-            }
-
-            while (scoreDealer < scorePlayer)
-            {
-                var cardDealer = gameDealer.Deal();
-                gameDealer.AddCard(cardDealer);
-                scoreDealer = 0;
-                for (int i = 0; i < handDealer.Count; i++)
-                {
-                    scoreDealer = scoreDealer + handDealer[i].Score;
-                }
-                for (int i = 0; i < handDealer.Count; i++)
-                {
-                    if (handDealer[i].Symbol == "A" && scoreDealer <= 11)
-                    {
-                        scoreDealer = scoreDealer + 10;
-                    }
-                }
-
-            }
-
-            string showCardsDealer = "";
-            for (int i = 0; i < handDealer.Count; i++)
-            {
-                showCardsDealer = showCardsDealer + "\n" + handDealer[i].Symbol + handDealer[i].Suit;
-            }
-            txtHandDealer.Inlines.Add(new Run(showCardsDealer));
-
-            Check(scorePlayer, turn, scoreDealer);
-            PlayAgain();
-        }
-
-        private void btnPlayAgain_Click(object sender, RoutedEventArgs e)
-        {
-            btnHit.Visibility = Visibility.Visible;
-            btnStant.Visibility = Visibility.Visible;
-            btnPlayAgain.Visibility = Visibility.Hidden;
-            ResetGame();
         }
 
         public void PlayAgain()
